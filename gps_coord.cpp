@@ -44,7 +44,7 @@ double azimuthFrom(double lat, double lng, double otherLat, double otherLng)
     double otherLatRadian = toRadian(otherLat);
     double otherLngRadian = toRadian(otherLng);
     double lngRadianDiff = otherLngRadian - lngRadian;
-    
+
     double y = std::sin(lngRadianDiff);
     double x = std::cos(latRadian) * std::tan(otherLatRadian) - std::sin(latRadian) * std::cos(lngRadianDiff);
     double azimuth = normalizeAbsolute(fromRadian(atan2(y, x))+180);
@@ -84,13 +84,14 @@ int main()
     cin>>otherLat;
     cout<<"Target lng"<<endl;
     cin>>otherLng;
-    
-    double azimuth = toRadian(azimuthFrom(lat, lng, otherLat, otherLng)+90);
+
+    double azimuth = toRadian(azimuthFrom(lat, lng, otherLat, otherLng)+180);
     double distance = distanceFrom(lat, lng, otherLat, otherLng);
-    double x = distance * std::cos(azimuth); 
-OB    double y = distance * std::sin(azimuth);
+    double x = distance * std::cos(azimuth);
+    double y = distance * std::sin(azimuth);
     cout<<"dist"<<distance<<endl;
     cout<<"x,y="<<x<<","<<y<<endl;
-OB    cout<<"azimuth"<<azimuth<<endl;
+    cout<<"azimuth"<<azimuth<<endl;
+    cout<<"degree:azimuth"<<fromRadian(azimuth)<<endl;
     return 0;
 }
