@@ -2,8 +2,12 @@
 #include <cmath>
 int main(void)
 {
-    double rssi0 = -17.1;
-    double n = 3.65;
+    // graund param
+    // double rssi0 = -17.1;
+    // double n = 3.65;
+    // desert param (first day)
+    double rssi0=-61.2;
+    double n=2.29
 
     double rssi;
     double azimuth;
