@@ -7,7 +7,7 @@ int main(void)
     // double n = 3.65;
     // desert param (first day)
     double rssi0=-61.2;
-    double n=2.29
+    double n=2.29;
 
     double rssi;
     double azimuth;
